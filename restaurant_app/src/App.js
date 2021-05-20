@@ -4,6 +4,7 @@ import About from './components/About';
 import Menu from './components/Menu';
 import Call from './components/Call';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import Restaurant from './components/Restaurant';
 
 
 
@@ -24,7 +25,7 @@ function App() {
             <Route path='/menu' component={Menu}/>
             <Route path='/call' component={Call}/>
           </Switch>
-
+          <Restaurant/>
         </main>
       </Router>
     </div>
