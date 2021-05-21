@@ -6,6 +6,8 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import Restaurant from './components/Restaurant';
 import './App.css'
 
+
+
 function App() {
   return (
     <div className="App">
