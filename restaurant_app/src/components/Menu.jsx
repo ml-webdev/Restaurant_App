@@ -17,11 +17,11 @@ class Menu extends Component {
         const response = await fetch(url)
         var data = await response.json()
 
-        var menu_section_19 = data.result.menus[0].menu_sections[19]
-        console.log("-----" + menu_section_19.section_name)
+        var menu_section = data.result.menus[0].menu_sections[10]
+        console.log("-----" + menu_section.section_name)
         var menuNameArr = []
         var menuPriceArr = []
-        const menuObjects = menu_section_19.menu_items.map((item)=>{
+        const menuObjects = menu_section.menu_items.map((item)=>{
             // console.log(item.name)
             menuNameArr.push(item.name)
             // console.log(item.pricing[0].priceString)

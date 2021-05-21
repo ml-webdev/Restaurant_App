@@ -32,7 +32,7 @@ class Restaurant extends Component {
 
     render() {
         return (
-            <div>
+            <div className="title">
                {this.state.name}
             </div>
         );

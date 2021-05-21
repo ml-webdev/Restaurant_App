@@ -4,13 +4,15 @@
   padding: 0;
 }
 .title {
-  height: 25vh;
+  height: 35vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: slateblue;
   color: white;
-  font-size: 2.5rem;
+  font-size: 5.5rem;
+  font-weight: 200;
+  letter-spacing: 1rem;
 }
 .navbar {
   display: flex;
@@ -19,6 +21,7 @@
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
+  padding: 0.15rem;
 }
 .navbar > * {
   margin-left: 5.5rem;
@@ -63,6 +66,13 @@ a:hover {
 .call-us-3 {
   background-color: green;
   color: white;
+  transition: 0.25s ease-in-out;
+}
+.call-us-3:hover {
+  background-color: darkgreen;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
 }
 .cuisines {
   font-size: 3.75rem;
@@ -79,17 +89,20 @@ a:hover {
   width: 100%;
   justify-content: space-around;
   text-align: center;
+  margin-top: 2rem;
 }
 .about-bottom > * {
   border: 1px solid black;
   width: 30%;
+  height: 150%;
 }
 
 .about-info > ul {
   list-style: none;
 }
+
 .about-info > * {
-  font-size: 1.35rem;
+  font-size: 1rem;
   padding: 1rem;
 }
 .priceRange {
@@ -136,5 +149,9 @@ a:hover {
   font-size: 1.25rem;
 }
 #map {
-  height: 100%;
+  height: 150%;
+}
+h1 {
+  padding: 0;
+  margin: 0;
 }
