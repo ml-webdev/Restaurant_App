@@ -1,24 +1,62 @@
 import React, { Component } from 'react';
+import apiKey from '../keys/apiKey.js';
+import _restaurantID from '../keys/restaurantID'
 
 class About extends Component {
+    constructor(){
+        super()
+        this.state = ({
+            hours: 'Daily: ',
+            priceRange: '',
+            cuisines: ["Loading..."],
+            address: "",
+            lat: null,
+            lon: null,
+            website: ''
+        })
+    }
+    async componentDidMount(){
+        const key = apiKey
+        const restaurantID = _restaurantID
+        const url = `https://api.documenu.com/v2/restaurant/${restaurantID}?key=${key}`
+        const response = await fetch(url)
+        var data = await response.json()
+
+        // set new state
+        var _hours = data.result.hours
+        var _priceRange = data.result.price_range
+        var _cuisines = data.result.cuisines
+        var _address = data.result.address.formatted
+
+
+        var _website = data.result.restaurant_website
+
+        this.setState({
+            hours: _hours,
+            priceRange: _priceRange, 
+            cuisines: _cuisines,
+            address: _address,
+
+
+            website: _website
+        })
+        }
     render() {
         return (
             <div className="container">
-                <h1 className="heading">About Us</h1>
-                <div className="about-top">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum est accusantium doloremque vitae, cumque expedita quibusdam culpa repudiandae nisi in possimus magnam architecto maiores! Suscipit nesciunt labore ducimus recusandae dicta?
-                Rerum nemo sed est ab eveniet distinctio iste fugit voluptas iure odio quam dolore placeat possimus vel in, rem beatae cupiditate. Mollitia dolores ipsa impedit a dolorem. Quidem, ad asperiores.
-               </div>
-               <div className="about-bottom">
-                   <div className="picture">Pic</div>
+                <h1 className="heading">About</h1>
+                <h1 className="cuisines">{this.state.cuisines.join(' | ')}</h1>
+                <div className="about-bottom">
+                   <div className="priceRange">Price: {this.state.priceRange}</div>
                    <div className="about-info">
                        <ul>
-                           <li>Info</li>
-                           <li>Info</li>
-                           <li>Info</li>
+                           <li>{this.state.address}</li>
+                           <li>Hours: {this.state.hours}</li>
+                           <li className="website"><span><a href={this.state.website} target="_blank">Website</a></span></li>
                        </ul>
                    </div>
                    <div className="maps">Maps</div>
-               </div>
+                </div>
             </div>
         );
     }
