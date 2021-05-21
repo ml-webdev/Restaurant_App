@@ -82,6 +82,7 @@ a:hover {
 .menu-container {
   width: 100%;
   height: 75%;
+  overflow: scroll;
 }
 .menu-container > * {
   padding-top: 1rem;
