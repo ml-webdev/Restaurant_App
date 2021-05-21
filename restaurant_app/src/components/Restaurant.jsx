@@ -20,9 +20,7 @@ class Restaurant extends Component {
         var data = await response.json()
 
 
-        // console.log("-----" + data.result.restaurant_name)
-        // console.log("-----" + data.result.restaurant_phone)
-        // console.log("-----" + data.result.price_range)
+
 
         this.setState({
             name: data.result.restaurant_name,

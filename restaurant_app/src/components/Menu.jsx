@@ -26,16 +26,16 @@ class Menu extends Component {
             menuNameArr.push(item.name)
             // console.log(item.pricing[0].priceString)
             menuPriceArr.push(item.pricing[0].priceString)
-            {
-            <div>
+            
+            return (<div>
                 {/* <h1>{item.name}</h1>
                 <p>{item.pricing[0].priceString}</p> */}
                 {this.setState({
                     name: menuNameArr,
                     price: menuPriceArr
                 })}
-            </div>
-            }
+            </div>)
+            
         })
         console.log(menuObjects)
 

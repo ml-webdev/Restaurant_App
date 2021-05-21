@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import apiKey from '../keys/apiKey.js';
 import _restaurantID from '../keys/restaurantID'
 
+
 class About extends Component {
     constructor(){
         super()
@@ -36,11 +37,10 @@ class About extends Component {
             priceRange: _priceRange, 
             cuisines: _cuisines,
             address: _address,
-
-
             website: _website
         })
         }
+    
     render() {
         return (
             <div className="container">
@@ -52,10 +52,10 @@ class About extends Component {
                        <ul>
                            <li>{this.state.address}</li>
                            <li>Hours: {this.state.hours}</li>
-                           <li className="website"><span><a href={this.state.website} target="_blank">Website</a></span></li>
+                           <li className="website"><span><a href={this.state.website} target="_blank" rel="noreferrer">Website</a></span></li>
                        </ul>
                    </div>
-                   <div className="maps">Maps</div>
+                   <div className="maps" id="map">Maps</div>
                 </div>
             </div>
         );
