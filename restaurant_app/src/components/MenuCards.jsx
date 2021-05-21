@@ -3,7 +3,10 @@ import React from 'react';
 function MenuCards(props) {
     return (
         <div>
-            <div className="menuCard">{props.name}{props.price}</div>
+            <div className="menuCard">
+                <h1>{props.name}</h1>
+                <p>{props.price}</p>
+            </div>
         </div>
     );
 }

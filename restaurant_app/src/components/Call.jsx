@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 class Call extends Component {
+    async componentDidMount(){
+        const key = apiKey
+        const restaurantID = _restaurantID
+        const url = `https://api.documenu.com/v2/restaurant/${restaurantID}?key=${key}`
+        const response = await fetch(url)
+        var data = await response.json()
+
+        }
     render() {
         return (
             <div className="container">
